@@ -4,529 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Refresh Hero | Residential Cleaning</title>
-<meta name="description" content="Refresh Hero brings reliable, detail-obsessed residential cleaning to your door. Standard cleans, deep cleans, move-in/move-out, and recurring maintenance.">
+<meta name="description" content="Refresh Hero is Ron Walker's local, one-person residential cleaning business, serving select communities throughout Southern Maryland — reliable, detail-obsessed cleaning with the same face at your door every time.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg: #F4F4F9;
-    --surface: #FFFFFF;
-    --ink: #171A21;
-    --ink-soft: #4A4F5C;
-    --teal: #004346;
-    --teal-deep: #002A2C;
-    --coral: #F25757;
-    --coral-deep: #D63F3F;
-    --yellow: #F5E960;
-
-    --font-display: "Unbounded", "Arial Black", sans-serif;
-    --font-body: "Work Sans", "Segoe UI", sans-serif;
-
-    --container: 1180px;
-    --radius: 18px;
-  }
-
-  *, *::before, *::after{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior: auto; }
-    *, *::before, *::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
-  }
-
-  body{
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  img{ max-width: 100%; display: block; }
-
-  h1, h2, h3{
-    font-family: var(--font-display);
-    line-height: 1.12;
-    text-wrap: balance;
-    margin: 0;
-    color: var(--teal);
-  }
-
-  p{ margin: 0; }
-
-  a{ color: inherit; }
-
-  .container{
-    width: 100%;
-    max-width: var(--container);
-    margin-inline: auto;
-    padding-inline: 24px;
-  }
-
-  .eyebrow{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-body);
-    font-weight: 700;
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--coral-deep);
-  }
-  .eyebrow::before{
-    content: "";
-    width: 22px;
-    height: 3px;
-    background: var(--coral);
-    border-radius: 2px;
-  }
-
-  .btn{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-family: var(--font-body);
-    font-weight: 700;
-    font-size: 0.98rem;
-    padding: 15px 28px;
-    border-radius: 999px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    text-decoration: none;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
-    white-space: nowrap;
-  }
-  .btn-primary{
-    background: var(--coral);
-    color: #FFFFFF;
-    box-shadow: 0 10px 24px -8px rgba(242, 87, 87, 0.65);
-  }
-  .btn-primary:hover{ background: var(--coral-deep); transform: translateY(-2px); box-shadow: 0 14px 28px -8px rgba(242, 87, 87, 0.75); }
-  .btn-ghost{
-    background: transparent;
-    color: var(--bg);
-    border-color: rgba(244, 244, 249, 0.4);
-  }
-  .btn-ghost:hover{ border-color: var(--yellow); color: var(--yellow); transform: translateY(-2px); }
-  .btn-dark{
-    background: var(--teal);
-    color: #FFFFFF;
-  }
-  .btn-dark:hover{ background: var(--teal-deep); transform: translateY(-2px); }
-
-  /* ---------- Nav ---------- */
-  .site-header{
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--teal-deep);
-    border-bottom: 1px solid rgba(245, 233, 96, 0.12);
-  }
-  .nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-block: 12px;
-  }
-  .brand{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: var(--bg);
-  }
-  .brand img{ height: 42px; width: auto; }
-  .brand-name{
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.15rem;
-    letter-spacing: 0.01em;
-  }
-  .nav-links{
-    display: flex;
-    align-items: center;
-    gap: 34px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .nav-links a{
-    text-decoration: none;
-    color: rgba(244, 244, 249, 0.85);
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: color 0.15s ease;
-  }
-  .nav-links a:hover{ color: var(--yellow); }
-  .nav-cta{ display: flex; align-items: center; gap: 18px; }
-  .nav-toggle{
-    display: none;
-    background: none;
-    border: none;
-    color: var(--bg);
-    cursor: pointer;
-    padding: 6px;
-  }
-  .nav-toggle svg{ width: 26px; height: 26px; }
-
-  @media (max-width: 860px){
-    .nav-links{
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: var(--teal-deep);
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 4px;
-      padding: 10px 24px 22px;
-      border-bottom: 1px solid rgba(245, 233, 96, 0.15);
-      display: none;
-    }
-    .nav-links.open{ display: flex; }
-    .nav-links a{ padding: 10px 0; width: 100%; }
-    .nav-toggle{ display: inline-flex; }
-    .nav-cta .btn-primary-desktop{ display: none; }
-  }
-
-  /* ---------- Hero ---------- */
-  .hero{
-    position: relative;
-    background: linear-gradient(180deg, var(--teal-deep) 0%, var(--teal) 65%, var(--teal) 100%);
-    color: var(--bg);
-    overflow: hidden;
-  }
-  .hero::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(244,244,249,0.09) 1.4px, transparent 1.4px);
-    background-size: 22px 22px;
-    mask-image: linear-gradient(180deg, rgba(0,0,0,0.9), transparent 75%);
-    pointer-events: none;
-  }
-  .hero-inner{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    align-items: center;
-    gap: 48px;
-    padding-block: 76px 92px;
-  }
-  .hero-copy .eyebrow{ color: var(--yellow); }
-  .hero-copy .eyebrow::before{ background: var(--yellow); }
-  .hero-copy h1{
-    color: var(--bg);
-    font-size: clamp(2.4rem, 4.4vw, 3.65rem);
-    margin-top: 18px;
-  }
-  .hero-copy h1 span{ color: var(--yellow); }
-  .hero-copy p{
-    margin-top: 22px;
-    max-width: 46ch;
-    font-size: 1.12rem;
-    color: rgba(244, 244, 249, 0.82);
-  }
-  .hero-actions{
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    margin-top: 34px;
-    flex-wrap: wrap;
-  }
-  .hero-trust{
-    display: flex;
-    gap: 28px;
-    margin-top: 46px;
-    flex-wrap: wrap;
-  }
-  .hero-trust div{ display: flex; flex-direction: column; }
-  .hero-trust strong{ font-family: var(--font-display); font-size: 1rem; color: var(--yellow); }
-  .hero-trust span{ font-size: 0.85rem; color: rgba(244,244,249,0.7); }
-
-  .hero-art{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-art img{
-    position: relative;
-    width: min(88%, 460px);
-    filter: drop-shadow(0 22px 34px rgba(0,0,0,0.35));
-  }
-
-  @media (max-width: 900px){
-    .hero-inner{ grid-template-columns: 1fr; padding-block: 52px 60px; text-align: left; }
-    .hero-art{ order: -1; }
-    .hero-art img{ width: min(65%, 320px); }
-  }
-
-  /* ---------- Trust strip ---------- */
-  .trust-strip{
-    background: var(--surface);
-    border-bottom: 1px solid rgba(23, 26, 33, 0.06);
-  }
-  .trust-grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding-block: 30px;
-  }
-  .trust-item{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 0.92rem;
-    color: var(--teal);
-  }
-  .trust-item svg{ flex-shrink: 0; width: 26px; height: 26px; color: var(--coral); }
-  @media (max-width: 860px){
-    .trust-grid{ grid-template-columns: repeat(2, 1fr); }
-  }
-
-  /* ---------- Section shell ---------- */
-  section{ padding-block: 92px; }
-  .section-head{
-    max-width: 640px;
-    margin-bottom: 52px;
-  }
-  .section-head h2{
-    font-size: clamp(1.9rem, 3vw, 2.5rem);
-    margin-top: 14px;
-  }
-  .section-head p{
-    margin-top: 16px;
-    color: var(--ink-soft);
-    font-size: 1.05rem;
-  }
-  .section-head.center{ margin-inline: auto; text-align: center; }
-  .section-head.center .eyebrow{ justify-content: center; }
-  .section-head.center .eyebrow::before{ display: none; }
-
-  /* ---------- Services ---------- */
-  .services-grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-  .service-card{
-    background: var(--surface);
-    border-radius: var(--radius);
-    padding: 30px 26px;
-    box-shadow: 0 1px 0 rgba(23,26,33,0.04);
-    border: 1px solid rgba(23, 26, 33, 0.06);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
-  }
-  .service-card::before{
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 6px;
-    background: var(--coral);
-  }
-  .service-card:nth-child(2n)::before{ background: var(--yellow); }
-  .service-card:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 20px 32px -18px rgba(23, 26, 33, 0.28);
-  }
-  .service-icon{
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: rgba(0, 67, 70, 0.07);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  .service-icon svg{ width: 26px; height: 26px; color: var(--teal); }
-  .service-card h3{ font-size: 1.12rem; }
-  .service-card p{ margin-top: 10px; color: var(--ink-soft); font-size: 0.95rem; }
-
-  @media (max-width: 980px){ .services-grid{ grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px){ .services-grid{ grid-template-columns: 1fr; } }
-
-  /* ---------- How it works ---------- */
-  .how{ background: var(--teal); color: var(--bg); }
-  .how .section-head h2{ color: var(--bg); }
-  .how .section-head p{ color: rgba(244,244,249,0.75); }
-  .how .eyebrow{ color: var(--yellow); }
-  .how .eyebrow::before{ background: var(--yellow); }
-
-  .steps{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    counter-reset: step;
-  }
-  .step{
-    position: relative;
-    padding: 34px 28px 28px;
-    background: rgba(244, 244, 249, 0.06);
-    border: 1px solid rgba(244, 244, 249, 0.14);
-    border-radius: var(--radius);
-  }
-  .step-number{
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 2.6rem;
-    color: var(--yellow);
-    opacity: 0.9;
-    line-height: 1;
-  }
-  .step h3{ color: var(--bg); margin-top: 18px; font-size: 1.15rem; }
-  .step p{ margin-top: 10px; color: rgba(244,244,249,0.78); font-size: 0.96rem; }
-
-  @media (max-width: 860px){ .steps{ grid-template-columns: 1fr; } }
-
-  /* ---------- Why us ---------- */
-  .why-grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-  .why-card{
-    padding: 28px 24px;
-    border-radius: var(--radius);
-    background: var(--surface);
-    border: 1px solid rgba(23,26,33,0.06);
-  }
-  .why-card .service-icon{ background: rgba(242, 87, 87, 0.1); }
-  .why-card .service-icon svg{ color: var(--coral-deep); }
-  .why-card h3{ font-size: 1.05rem; }
-  .why-card p{ margin-top: 8px; color: var(--ink-soft); font-size: 0.93rem; }
-
-  @media (max-width: 980px){ .why-grid{ grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px){ .why-grid{ grid-template-columns: 1fr; } }
-
-  /* ---------- Quote / Contact ---------- */
-  .quote{
-    background: var(--surface);
-    border-radius: 28px;
-    max-width: var(--container);
-    margin-inline: auto;
-    padding: 0;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    box-shadow: 0 30px 60px -30px rgba(23,26,33,0.25);
-  }
-  .quote-info{
-    background: var(--teal-deep);
-    color: var(--bg);
-    padding: 52px 46px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-  }
-  .quote-info .eyebrow{ color: var(--yellow); }
-  .quote-info .eyebrow::before{ background: var(--yellow); }
-  .quote-info h2{ color: var(--bg); margin-top: 14px; font-size: clamp(1.7rem, 2.6vw, 2.2rem); }
-  .quote-info p{ margin-top: 16px; color: rgba(244,244,249,0.78); }
-  .contact-list{ list-style: none; margin: 30px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
-  .contact-list li{ display: flex; align-items: center; gap: 12px; font-weight: 600; }
-  .contact-list svg{ width: 20px; height: 20px; color: var(--yellow); flex-shrink: 0; }
-  .contact-list a{ text-decoration: none; color: inherit; }
-  .contact-list a:hover{ color: var(--yellow); }
-
-  .quote-form{ padding: 52px 46px; }
-  .field-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .field{ display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-  .field label{ font-size: 0.85rem; font-weight: 600; color: var(--teal); }
-  .field input, .field select, .field textarea{
-    font-family: var(--font-body);
-    font-size: 0.98rem;
-    padding: 12px 14px;
-    border-radius: 10px;
-    border: 1.5px solid rgba(23,26,33,0.14);
-    background: var(--bg);
-    color: var(--ink);
-    outline: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  }
-  .field input:focus, .field select:focus, .field textarea:focus{
-    border-color: var(--coral);
-    box-shadow: 0 0 0 4px rgba(242, 87, 87, 0.15);
-  }
-  .field textarea{ resize: vertical; min-height: 90px; }
-  .quote-form .btn{ width: 100%; margin-top: 4px; }
-  .form-note{ margin-top: 14px; font-size: 0.82rem; color: var(--ink-soft); }
-  .form-success{
-    display: none;
-    align-items: flex-start;
-    gap: 12px;
-    background: rgba(0, 67, 70, 0.07);
-    border: 1px solid rgba(0, 67, 70, 0.16);
-    color: var(--teal);
-    padding: 16px 18px;
-    border-radius: 12px;
-    margin-bottom: 18px;
-    font-size: 0.94rem;
-    font-weight: 600;
-  }
-  .form-success.show{ display: flex; }
-  .form-success svg{ width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; }
-
-  @media (max-width: 900px){
-    .quote{ grid-template-columns: 1fr; border-radius: 22px; }
-    .quote-info, .quote-form{ padding: 40px 28px; }
-  }
-  @media (max-width: 520px){ .field-row{ grid-template-columns: 1fr; } }
-
-  /* ---------- Footer ---------- */
-  .site-footer{ background: var(--teal-deep); color: rgba(244,244,249,0.75); padding-block: 56px 28px; margin-top: 100px; }
-  .footer-top{
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(244,244,249,0.12);
-  }
-  .footer-brand{ display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-  .footer-brand img{ height: 38px; }
-  .footer-brand span{ font-family: var(--font-display); font-weight: 700; color: var(--bg); font-size: 1.1rem; }
-  .footer-top p{ max-width: 34ch; font-size: 0.92rem; }
-  .footer-col h4{ color: var(--bg); font-family: var(--font-body); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
-  .footer-col ul{ list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-  .footer-col a{ text-decoration: none; color: rgba(244,244,249,0.75); font-size: 0.93rem; }
-  .footer-col a:hover{ color: var(--yellow); }
-  .footer-bottom{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 24px;
-    font-size: 0.82rem;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .footer-socials{ display: flex; gap: 14px; }
-  .footer-socials a{
-    width: 36px; height: 36px;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 50%;
-    background: rgba(244,244,249,0.08);
-    color: var(--bg);
-    transition: background-color 0.15s ease, color 0.15s ease;
-  }
-  .footer-socials a:hover{ background: var(--coral); }
-  .footer-socials svg{ width: 17px; height: 17px; }
-
-  @media (max-width: 780px){ .footer-top{ grid-template-columns: 1fr; } }
-
-  /* ---------- Reveal animation ---------- */
-  .reveal{ opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .reveal.in{ opacity: 1; transform: translateY(0); }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -538,15 +20,13 @@
     </a>
 
     <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#why">Why Us</a></li>
-      <li><a href="#quote">Contact</a></li>
-      <li><a class="btn btn-primary" style="margin-top:8px;" href="#quote">Get a Free Quote</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#service-area">Service Area</a></li>
     </ul>
 
     <div class="nav-cta">
-      <a href="#quote" class="btn btn-primary btn-primary-desktop">Get a Free Quote</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -560,18 +40,14 @@
   <section class="hero" id="home" style="padding-block:0;">
     <div class="container hero-inner">
       <div class="hero-copy">
-        <span class="eyebrow">Residential Cleaning, Done Right</span>
-        <h1>Your home's <span>cleaning superhero</span> has arrived.</h1>
-        <p>Refresh Hero brings reliable, detail-obsessed cleaning to your door — so your weekend can go anywhere but behind a mop.</p>
+        <h1>Your home's <span>cleaning superhero</span>.</h1>
+        <p>Reliable, detail-obsessed cleaning at your door.</p>
         <div class="hero-actions">
-          <a href="#quote" class="btn btn-primary">Get a Free Quote</a>
-          <a href="#services" class="btn btn-ghost">See Our Services</a>
+          <a href="mailto:hello@refreshhero.com" class="btn btn-primary">Request Service</a>
         </div>
-        <div class="hero-trust">
-          <div><strong>Bonded &amp; Insured</strong><span>Every visit, every home</span></div>
-          <div><strong>Vetted Team</strong><span>Background-checked cleaners</span></div>
-          <div><strong>Satisfaction Guaranteed</strong><span>Or we make it right</span></div>
-        </div>
+        <p class="hero-area">
+          Serving select communities throughout Southern Maryland
+        </p>
       </div>
       <div class="hero-art">
         <img src="refresh-hero-logo.png" alt="Illustration of the Refresh Hero mascot, a caped cleaning superhero holding a spray bottle">
@@ -579,24 +55,17 @@
     </div>
   </section>
 
-  <!-- TRUST STRIP -->
-  <section class="trust-strip" style="padding-block:0;">
-    <div class="container trust-grid">
-      <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6l7-3z"/><path d="M9.5 12l1.8 1.8L14.8 10"/></svg>
-        Bonded &amp; Insured
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container about-inner">
+      <div class="about-avatar-wrap reveal">
+        <img class="about-avatar" src="ron-walker.jpg" alt="Ron Walker, owner of Refresh Hero">
+        <span class="about-badge">Owner &amp; Operator</span>
       </div>
-      <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3.1-6 7-6s7 2.5 7 6"/></svg>
-        Background-Checked Team
-      </div>
-      <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 3 5 6 5 9a5 5 0 0 1-10 0c0-3 2-6 5-9z"/></svg>
-        Eco-Conscious Products
-      </div>
-      <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>
-        Satisfaction Guaranteed
+      <div class="about-copy reveal">
+        <span class="eyebrow">Meet Your Hero</span>
+        <h2>Hi, I'm Ron Walker.</h2>
+        <p>It's just me. A one-person cleaning business serving select communities throughout Southern Maryland. No rotating crews, no middlemen.</p>
       </div>
     </div>
   </section>
@@ -605,181 +74,88 @@
   <section id="services">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">What We Do</span>
-        <h2>Cleaning services built around your home</h2>
-        <p>From a quick refresh to a top-to-bottom deep clean, pick the service that fits — or let a recurring visit take it off your plate for good.</p>
+        <span class="eyebrow">Recurring Clients Only</span>
+        <h2>A cleaning routine, not a one-time job</h2>
+        <p>As a solo operator working, my calendar is limited. Therefore, I keep it filled with clients who want a regular cleaner, not a one-off visit. That means no one-time cleans, no move-in/move-out jobs.</p>
       </div>
 
       <div class="services-grid">
         <div class="service-card reveal">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l6-6"/><path d="M13.5 3.5l7 7L9 22l-6-1 1-6z"/><path d="M12 6l6 6"/></svg>
-          </div>
-          <h3>Standard Home Cleaning</h3>
-          <p>Dusting, vacuuming, kitchens, and bathrooms — the reliable refresh your home deserves at every visit.</p>
+          <h3>Twice a Week</h3>
+          <p>The most hands-off plan — two visits a week keeps a busy or high-traffic household consistently spotless.</p>
         </div>
 
         <div class="service-card reveal">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4M3 5h4"/><path d="M19 13v4M17 15h4"/><path d="M9 21l10-10"/><path d="M15 3l6 6-4 4-6-6z"/></svg>
-          </div>
-          <h3>Deep Cleaning</h3>
-          <p>Baseboards, grout, appliance interiors, and every overlooked corner. Perfect for a seasonal reset.</p>
+          <h3>Once a Week</h3>
+          <p>The most popular plan — same day, same routine, same reliable results every single week.</p>
         </div>
 
         <div class="service-card reveal">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
-          </div>
-          <h3>Move-In / Move-Out</h3>
-          <p>A spotless handoff — whether you're closing on a new place or returning a rental to its original shine.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v5h5"/><path d="M20 20v-5h-5"/><path d="M4.6 15A8 8 0 0 0 19 9.5"/><path d="M19.4 9A8 8 0 0 0 5 14.5"/></svg>
-          </div>
-          <h3>Recurring Maintenance</h3>
-          <p>Weekly, biweekly, or monthly visits on a schedule you set — consistent care without lifting a finger.</p>
+          <h3>Every Other Week</h3>
+          <p>A steady rhythm that keeps your home consistently clean without a visit every single week.</p>
         </div>
       </div>
+
+      <p class="services-note reveal">Every recurring visit follows the same room-by-room checklist, with deep-clean tasks like baseboards, grout, and appliance interiors rotated in every few visits — no separate deep clean to book.</p>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="how" id="how">
+  <!-- PRICING -->
+  <section id="pricing">
     <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">The Process</span>
-        <h2>Three steps to a cleaner home</h2>
-        <p>No contracts to untangle and no guesswork — just tell us what you need and we'll take it from there.</p>
+      <div class="section-head center reveal">
+        <span class="eyebrow">Simple, Transparent Pricing</span>
+        <h2>One flat rate</h2>
       </div>
 
-      <div class="steps">
-        <div class="step reveal">
-          <span class="step-number">01</span>
-          <h3>Book your visit</h3>
-          <p>Tell us about your home and pick a time that works for you — one-time or recurring.</p>
+      <div class="pricing-card reveal">
+        <div class="pricing-amount">
+          <span class="pricing-currency">$</span>40<span class="pricing-unit">/ hour</span>
         </div>
-        <div class="step reveal">
-          <span class="step-number">02</span>
-          <h3>We suit up &amp; clean</h3>
-          <p>A vetted Refresh Hero cleaner arrives with supplies and a room-by-room checklist.</p>
-        </div>
-        <div class="step reveal">
-          <span class="step-number">03</span>
-          <h3>You relax</h3>
-          <p>Walk into a home that feels renewed — and a team that shows up the same way, every time.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section id="why">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Why Refresh Hero</span>
-        <h2>Cleaning you don't have to think twice about</h2>
-        <p>We built Refresh Hero around the things homeowners actually worry about when letting someone into their home.</p>
-      </div>
-
-      <div class="why-grid">
-        <div class="why-card reveal">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3.1-6 7-6s7 2.5 7 6"/></svg>
-          </div>
-          <h3>Vetted &amp; Trusted</h3>
-          <p>Every cleaner is background-checked and trained on our exact checklist before they set foot in your home.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-          </div>
-          <h3>Flexible Scheduling</h3>
-          <p>Book a one-time visit or a recurring plan that bends to your calendar, not the other way around.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6l7-3z"/><path d="M9.5 12l1.8 1.8L14.8 10"/></svg>
-          </div>
-          <h3>Satisfaction Guaranteed</h3>
-          <p>Missed a spot? Tell us within 24 hours and we'll come back to make it right — free of charge.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 3 5 6 5 9a5 5 0 0 1-10 0c0-3 2-6 5-9z"/></svg>
-          </div>
-          <h3>Eco-Conscious Supplies</h3>
-          <p>We clean tough, not toxic — safer products for your kids, pets, and the air you breathe.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUOTE / CONTACT -->
-  <section id="quote">
-    <div class="quote reveal">
-      <div class="quote-info">
-        <span class="eyebrow">Ready When You Are</span>
-        <h2>Get your free cleaning quote</h2>
-        <p>Share a few details about your home and our team will follow up with pricing and the next available time slot.</p>
-        <ul class="contact-list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2.1z"/></svg>
-            <a href="tel:+15550107392">(555) 010-7392</a>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
-            <a href="mailto:hello@refreshhero.com">hello@refreshhero.com</a>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
-            Proudly serving the greater metro area
-          </li>
+        <ul class="pricing-list">
+          <li>No contracts — cancel anytime</li>
         </ul>
       </div>
+    </div>
+  </section>
 
-      <div class="quote-form">
-        <div class="form-success" id="formSuccess">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>
-          <span>Thanks! Your request is in — we'll follow up shortly with a quote.</span>
-        </div>
-
-        <form id="quoteForm">
-          <div class="field-row">
-            <div class="field">
-              <label for="name">Full name</label>
-              <input type="text" id="name" name="name" placeholder="Jamie Rivera" required>
-            </div>
-            <div class="field">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
-            </div>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@email.com" required>
-            </div>
-            <div class="field">
-              <label for="service">Service needed</label>
-              <select id="service" name="service">
-                <option>Standard Home Cleaning</option>
-                <option>Deep Cleaning</option>
-                <option>Move-In / Move-Out</option>
-                <option>Recurring Maintenance</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label for="notes">Tell us about your home</label>
-            <textarea id="notes" name="notes" placeholder="Home size, number of bedrooms/bathrooms, preferred dates..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Request My Quote</button>
-          <p class="form-note">This form doesn't send anywhere yet — connect it to your email service or booking backend before going live.</p>
-        </form>
+  <!-- SERVICE AREA -->
+  <section id="service-area">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Where I Work</span>
+        <h2>Southern Maryland</h2>
       </div>
+      <ul class="area-grid">
+        <li class="area-chip reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          Waldorf, MD
+        </li>
+        <li class="area-chip reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          White Plains, MD
+        </li>
+        <li class="area-chip reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          Bryans Road, MD
+        </li>
+        <li class="area-chip reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          La Plata, MD
+        </li>
+        <li class="area-chip reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          Indian Head, MD
+        </li>
+        <li class="area-chip reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          Brandywine, MD
+        </li>
+        <li class="area-chip reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          Accokeek, MD
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -793,15 +169,15 @@
           <img src="refresh-hero-logo.png" alt="Refresh Hero logo">
           <span>Refresh Hero</span>
         </div>
-        <p>Cleaning with a hero's care. Reliable residential cleaning for homes that deserve a fresh start.</p>
+        <p>Owned and operated by Ron Walker. Local, one-person residential cleaning, serving select communities throughout Southern Maryland.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
         <ul>
+          <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#how">How It Works</a></li>
-          <li><a href="#why">Why Us</a></li>
-          <li><a href="#quote">Get a Quote</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#service-area">Service Area</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -809,7 +185,6 @@
         <ul>
           <li><a href="tel:+15550107392">(555) 010-7392</a></li>
           <li><a href="mailto:hello@refreshhero.com">hello@refreshhero.com</a></li>
-          <li><a href="#quote">Request a quote</a></li>
         </ul>
       </div>
     </div>
@@ -824,47 +199,7 @@
   </div>
 </footer>
 
-<script>
-  // Mobile nav toggle
-  var navToggle = document.getElementById('navToggle');
-  var navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', function(){
-    var isOpen = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-  navLinks.querySelectorAll('a').forEach(function(link){
-    link.addEventListener('click', function(){
-      navLinks.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  // Scroll reveal
-  var revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window){
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting){
-          entry.target.classList.add('in');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach(function(el){ observer.observe(el); });
-  } else {
-    revealEls.forEach(function(el){ el.classList.add('in'); });
-  }
-
-  // Quote form (front-end only demo)
-  var quoteForm = document.getElementById('quoteForm');
-  var formSuccess = document.getElementById('formSuccess');
-  quoteForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    formSuccess.classList.add('show');
-    quoteForm.reset();
-    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  });
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
