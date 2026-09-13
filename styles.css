@@ -254,8 +254,7 @@ a{ color: inherit; }
 
 @media (max-width: 900px){
   .hero-inner{ grid-template-columns: 1fr; padding-block: 52px 60px; text-align: left; }
-  .hero-art{ order: -1; }
-  .hero-art img{ width: min(65%, 320px); }
+  .hero-art{ display: none; }
 }
 
 /* ---------- Trust strip ---------- */
