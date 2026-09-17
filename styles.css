@@ -555,6 +555,12 @@ section{ padding-block: 92px; }
   border-bottom: 2px solid var(--teal-deep);
   transform: rotate(-45deg);
 }
+.pricing-note{
+  margin: -14px 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
 .pricing-card .btn{ width: 100%; }
 
 /* ---------- Service Area ---------- */
