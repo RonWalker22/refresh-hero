@@ -558,12 +558,21 @@ section{ padding-block: 92px; }
 .pricing-card .btn{ width: 100%; }
 
 /* ---------- Service Area ---------- */
+.area-group{ margin-top: 32px; }
+.area-group:first-of-type{ margin-top: 0; }
+.area-group-title{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--teal);
+  margin: 0 0 16px;
+}
 .area-grid{
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
 }
 .area-chip{
